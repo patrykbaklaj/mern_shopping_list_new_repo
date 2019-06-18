@@ -9,7 +9,7 @@ const app = express();
 //body-parser midleware
 app.use(bodyParser.json());
 
-const db = require("./config/keys").mongoURI;
+const db = process.env.MONGO_URI;
 
 // connect to mongo
 mongoose
