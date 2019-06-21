@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const items = require("./routes/api/items");
 const users = require('./routes/api/users');
+const config = require("config");
 
 const app = express();
 
@@ -10,7 +11,7 @@ const app = express();
 app.use(express.json());
 
 // const db = process.env.MONGO_URI;
-const db = require('./config/keys').mongoURI;
+const db = config.get("mongoURI");
 
 // connect to mongo
 mongoose
